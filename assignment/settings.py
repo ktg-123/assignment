@@ -101,6 +101,7 @@ REST_FRAMEWORK = {
 CELERY_RESULT_BACKEND = "django-db"
 CELERY_BROKER_URL = env('CELERY_BROKER_URL')
 CELERY_BEAT_SCHEDULER = 'django_celery_beat.schedulers.DatabaseScheduler'
+CELERY_TASK_TIME_LIMIT = 60 * 60  
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators

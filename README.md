@@ -17,7 +17,7 @@ Following are the prerequisite for running the application
 - Enter a random secret key for the django project. 
 - Now enter the project directory and run `python manage.py makemigrations`  and  `python manage.py migrate`.
 - Now open 2 terminals and on one run the django server using `python manage.py runserver` while on the other run the celery worker using `celery -A assignment worker --beat -l info`
-- Wait for sometime, the default time for fetching videos is 30 seconds, you can change it in `constants.py` if you want. Then visit the following url to see the list of videos. Since the response is paginated so you will also get the link for the previous and next page to browse more results.
+- Wait for sometime, the default time for fetching videos is 30 seconds, you can change it in `constants.py` if you want. Then visit the following url http://127.0.0.1:8000/videos/ to see the list of videos. Since the response is paginated so you will also get the link for the previous and next page to browse more results.
 
 
 ![image](https://user-images.githubusercontent.com/58258464/210419857-f0b8af30-a5b3-4fb8-9471-a4ebd113e1ae.png)

@@ -1,13 +1,15 @@
 import os
+import environ
 from googleapiclient.discovery import build
 from datetime import datetime, timezone, timedelta
-import environ
+from celery import shared_task
 
 from finvid.models import Video
 
 env = environ.Env()
 environ.Env.read_env()
 
+@shared_task
 def fetch_videos():
 
     """Fetch videos from YouTube API"""

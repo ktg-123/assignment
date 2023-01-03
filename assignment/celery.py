@@ -1,6 +1,7 @@
 import os
 
 from celery import Celery
+from finvid.constants import CELERY_FETCH_VIDEO_TIME_LIMIT
 
 # Set the default Django settings module for the 'celery' program.
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'assignment.settings')
@@ -16,7 +17,7 @@ app.config_from_object('django.conf:settings', namespace='CELERY')
 app.conf.beat_schedule = {
     'fetch-videos-every-30-seconds': {
         'task': 'finvid.tasks.fetch_videos',
-        'schedule': 30.0,
+        'schedule': CELERY_FETCH_VIDEO_TIME_LIMIT,
     },
 }
 
